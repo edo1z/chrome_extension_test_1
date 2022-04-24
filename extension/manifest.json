@@ -1,0 +1,27 @@
+{
+  "name": "hoge",
+  "version": "0.0.1",
+  "manifest_version": 3,
+  "description": "this extension is hoge",
+  "icons": {
+    "16": "icon.png",
+    "24": "icon.png",
+    "128": "icon.png"
+  },
+  "action": {
+    "default_icon": "icon.png",
+    "default_popup": "popup/popup.html"
+  },
+  "content_scripts": [
+    {
+      "matches": ["http://*/*", "https://*/*"],
+      "run_at": "document_end",
+      "js": ["content_scripts/js/hoge.js"],
+      "css": ["content_scripts/style/style.css"]
+    }
+  ],
+  "background": {
+    "service_worker": "background.js"
+  },
+  "permissions": ["storage", "activeTab", "scripting"]
+}
